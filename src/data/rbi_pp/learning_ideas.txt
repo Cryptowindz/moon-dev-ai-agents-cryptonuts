@@ -1,0 +1,5 @@
+Buy when RSI < 30 and sell when RSI > 70
+Buy when price crosses above 20-day moving average
+Buy when MACD line crosses above signal line
+Buy when Bollinger Bands squeeze followed by expansion
+Buy when volume spikes above 2x average volume
