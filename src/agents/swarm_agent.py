@@ -63,10 +63,11 @@ SWARM_MODELS = {
     # Provider: (enabled, model_type, model_name)
     "claude": (True, "claude", "claude-sonnet-4-5"),  # Claude 4.5 Sonnet - Latest & Greatest!
     "openai": (True, "openai", "gpt-5"),  # GPT-5 - Most advanced model!
+    "gemini": (True, "gemini", "gemini-2.5-flash"),  # Google Gemini - Fast and efficient!
     #"ollama_qwen": (True, "ollama", "qwen3:8b"),  # Qwen3 8B via Ollama - Fast local reasoning! (Replaces Gemini)
     "xai": (True, "xai", "grok-4-fast-reasoning"),  # Grok-4 fast reasoning
     "deepseek": (True, "deepseek", "deepseek-chat"),  # DeepSeek for reasoning (API)
-    #"ollama": (True, "ollama", "DeepSeek-R1:latest"),  # DeepSeek-R1 local model - 90s timeout
+    "ollama": (True, "ollama", "llama3.2"),  # Llama 3.2 local model - Fast local reasoning!
 }
 
 # Default parameters for model queries

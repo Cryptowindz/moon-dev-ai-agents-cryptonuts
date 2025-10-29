@@ -758,7 +758,7 @@ def execute_backtest(file_path: str, strategy_name: str, thread_id: int) -> dict
         raise FileNotFoundError(f"File not found: {file_path}")
 
     cmd = [
-        "conda", "run", "-n", CONDA_ENV,
+        "/opt/homebrew/Caskroom/miniconda/base/bin/conda", "run", "-n", CONDA_ENV,
         "python", str(file_path)
     ]
 

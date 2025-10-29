@@ -14,7 +14,8 @@ import time
 import json
 import numpy as np
 import datetime
-import pandas_ta as ta
+# Import our pandas-ta compatibility layer
+from src.pandas_ta_compat import pandas_ta as ta
 from datetime import datetime, timedelta
 from termcolor import colored, cprint
 import solders

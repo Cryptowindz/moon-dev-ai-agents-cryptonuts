@@ -60,15 +60,15 @@ from src.models import model_factory
 PROJECT_ROOT = Path(__file__).parent.parent.parent  # Points to project root
 DATA_DIR = PROJECT_ROOT / "src" / "data" / "rbi"
 IDEAS_TXT = DATA_DIR / "ideas.txt"
-IDEAS_CSV = DATA_DIR / "strategy_ideas.csv"
+IDEAS_CSV = DATA_DIR / "strategy_ideas.csv"-
 
-# Model configurations
+# Model configurations - Updated to use working models
 MODELS = [
-    # {"type": "ollama", "name": "DeepSeek-R1:latest"},
-    # {"type": "ollama", "name": "llama3.2:latest"},
-    # {"type": "ollama", "name": "gemma:2b"}
-    {"type": "deepseek", "name": "deepseek-chat"},
-    {"type": "deepseek", "name": "deepseek-reasoner"}
+    {"type": "openai", "name": "gpt-5"},
+    {"type": "gemini", "name": "gemini-2.5-flash"},
+    {"type": "xai", "name": "grok-4-fast-reasoning"},
+    # {"type": "deepseek", "name": "deepseek-chat"},  # Disabled - invalid API key
+    # {"type": "deepseek", "name": "deepseek-reasoner"}  # Disabled - invalid API key
 ]
 
 # Fun emojis for animation
