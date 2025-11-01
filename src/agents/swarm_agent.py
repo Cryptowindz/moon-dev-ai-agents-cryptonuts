@@ -60,14 +60,29 @@ from src.models.model_factory import model_factory
 
 # Configure which models to use in the swarm (set to True to enable)
 SWARM_MODELS = {
-    # Provider: (enabled, model_type, model_name)
-    "claude": (True, "claude", "claude-sonnet-4-5"),  # Claude 4.5 Sonnet - Latest & Greatest!
+    # 🌙 Moon Dev's Active Swarm Models - Working models with valid API keys
     "openai": (True, "openai", "gpt-5"),  # GPT-5 - Most advanced model!
     "gemini": (True, "gemini", "gemini-2.5-flash"),  # Google Gemini - Fast and efficient!
-    #"ollama_qwen": (True, "ollama", "qwen3:8b"),  # Qwen3 8B via Ollama - Fast local reasoning! (Replaces Gemini)
-    "xai": (True, "xai", "grok-4-fast-reasoning"),  # Grok-4 fast reasoning
-    "deepseek": (True, "deepseek", "deepseek-chat"),  # DeepSeek for reasoning (API)
+    "xai": (True, "xai", "grok-4-fast-reasoning"),  # Grok-4 fast reasoning ($0.20-$0.50/1M tokens)
     "ollama": (True, "ollama", "llama3.2"),  # Llama 3.2 local model - Fast local reasoning!
+
+    # 🔇 Disabled Models (API key issues)
+    #"deepseek": (True, "deepseek", "deepseek-chat"),  # DeepSeek Chat - insufficient balance
+    #"claude": (True, "claude", "claude-sonnet-4-5"),  # Claude 4.5 Sonnet - invalid API key
+    
+    # 🌙 OpenRouter Models - Access 200+ models through one API!
+    # Uncomment any of these to add them to your swarm (requires OPENROUTER_API_KEY):
+    #"openrouter_qwen": (True, "openrouter", "qwen/qwen3-max"),  # Qwen 3 Max - Powerful reasoning ($1.00/$1.00 per 1M tokens)
+    #"openrouter_gemini": (True, "openrouter", "google/gemini-2.5-flash"),  # Gemini 2.5 Flash - Fast & cheap! ($0.10/$0.40 per 1M tokens)
+    #"openrouter_glm": (True, "openrouter", "z-ai/glm-4.6"),  # GLM 4.6 - Zhipu AI reasoning ($0.50/$0.50 per 1M tokens)
+    #"openrouter_deepseek_r1": (True, "openrouter", "deepseek/deepseek-r1-0528"),  # DeepSeek R1 - Advanced reasoning ($0.55/$2.19 per 1M tokens)
+    #"openrouter_claude_opus": (True, "openrouter", "anthropic/claude-opus-4.1"),  # Claude Opus 4.1 via OpenRouter
+    #"openrouter_gpt5_mini": (True, "openrouter", "openai/gpt-5-mini"),  # GPT-5 Mini via OpenRouter
+    #"ollama_qwen": (True, "ollama", "qwen3:8b"),  # Qwen3 8B via Ollama - Fast local reasoning!
+    #"ollama_deepseek": (True, "ollama", "DeepSeek-R1:latest"),  # DeepSeek-R1 local model via Ollama
+
+    # 💡 See all 200+ models at: https://openrouter.ai/docs
+    # 💡 Any model from openrouter_model.py can be used here!
 }
 
 # Default parameters for model queries
@@ -78,7 +93,7 @@ DEFAULT_MAX_TOKENS = 2048  # Increased for model compatibility (Gemini/Groq/Qwen
 MODEL_TIMEOUT = 90
 
 # Consensus Reviewer - Synthesizes all responses into a clean summary
-CONSENSUS_REVIEWER_MODEL = ("claude", "claude-sonnet-4-5")  # (model_type, model_name)
+CONSENSUS_REVIEWER_MODEL = ("xai", "grok-4-fast-reasoning")  # Using Grok-4 (fast and working API)
 CONSENSUS_REVIEWER_PROMPT = """You are a consensus analyzer reviewing multiple AI responses.
 
 Below are responses from {num_models} different AI models to the same question.
