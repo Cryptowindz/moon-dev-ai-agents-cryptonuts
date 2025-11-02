@@ -46,7 +46,14 @@ class OllamaModel(BaseModel):
                 if models:
                     model_names = [model["name"] for model in models]
                     cprint(f"📚 Available Ollama models: {model_names}", "cyan")
-                    if self.model_name not in model_names:
+                    # Check if model exists (with or without :latest tag)
+                    model_found = any(
+                        self.model_name == name or 
+                        self.model_name == name.split(':')[0] or
+                        f"{self.model_name}:latest" == name
+                        for name in model_names
+                    )
+                    if not model_found:
                         cprint(f"⚠️ Model {self.model_name} not found! Please run:", "yellow")
                         cprint(f"   ollama pull {self.model_name}", "yellow")
                 else:
