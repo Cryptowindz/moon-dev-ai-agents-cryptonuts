@@ -1,0 +1,787 @@
+All right. So, today what I want to do
+
+is I want to go over this Mundev AI
+
+agents
+
+mostly for trading, but I'm doing all
+
+types of things as you as you know. It's
+
+going to be mostly trading as that's
+
+what I focus most of my time on. But I
+
+threw a couple agents in here that are
+
+not for trading. Anyways, this is all
+
+open- source GitHub. I thought it'd be
+
+cool experiment to have at least one
+
+project here that's totally open source
+
+and anybody can pull from it, build on
+
+it, and we should be able to come up
+
+with some interesting ideas here. um as
+
+a team as everybody has access to it. So
+
+what I want to do here is give you a
+
+walkthrough of the GitHub. Um you have
+
+the link already. It should be down
+
+below if not. Anyways,
+
+as you can see, it's growing pretty
+
+fast. You can go ahead and hit star in
+
+order to save it and fork in order to
+
+keep it. But essentially, you can go
+
+ahead and read the read me to see the
+
+vision here. But essentially, AI agents
+
+are clearly the future and the entire
+
+workforce will be replaced or at least
+
+be using AI agents. Is that going to be
+
+this year? Probably not. Next year,
+
+maybe over the next 5 years, I think
+
+absolutely. So, I just wanted to get
+
+this out in the public and then walk you
+
+through how to use this. There are two
+
+short um document uh documentation
+
+videos I created here, but ideally this
+
+will be the third one to really show you
+
+the things that I've been building this
+
+week as each week they will get updated.
+
+So you see we have a bunch of live
+
+agents and this week we actually updated
+
+the trading agent. So now there's a
+
+swarm model. So not a model but a swarm
+
+agent that we built. If we scroll down
+
+here, you know, we have a bunch of
+
+agents. You can read through them. The
+
+strategy agent, the trading agent, the
+
+risk agent, the copy agent, the whale
+
+agent. A lot of you have been here while
+
+I was building some of these on stream
+
+as well. But one of the big updates we
+
+made was the swarm agent that queries a
+
+bunch of different AIs. And I think this
+
+is a very interesting idea. It queries
+
+like five, six different AIs like Claw,
+
+Gemini, Grock, Deepseek. And then it
+
+asks them a question.
+
+So imagine five questions, five
+
+different companies get their answers
+
+and then it comes back and it comes back
+
+with a consensus AI.
+
+So it then gives all of the answers from
+
+the five different AIs to the consensus
+
+AI and says, "Hey, what's the consensus
+
+here?" So you can see all of these
+
+agents you already have access to. I
+
+trust that you can put this into codeex
+
+or claude code and understand everything
+
+yourself. But I want to go over the
+
+three that I added here this week. The
+
+DCA, I call it the Housecoin agent
+
+because that's my DCA, but it's a DCA, a
+
+dollar cost average agent that
+
+essentially is going to buy if the agent
+
+says okay on top of a strategy that's
+
+already implemented in there. So, I
+
+think it's important if you're going to
+
+use agents that there's some sort of
+
+strategy and then you can have like an
+
+override almost. What I'm really excited
+
+about this week is this swarm agent. I
+
+think this was the biggest jump. So,
+
+I'll show you how to access it. You can
+
+see it queries six AI models in parallel
+
+and then it has an AI consensus agent as
+
+well that will help kind of consolidate
+
+all of the answers. And then also I made
+
+a polyarket agent. This Poly Market
+
+agent essentially connects to all of the
+
+live trades on Poly Market and
+
+constantly watches all of the live
+
+trades and then it actually uses the
+
+swarm agent in order to
+
+get a swarm consensus on what trades
+
+maybe are interesting to take a look at.
+
+I would say this is in beta, but again,
+
+the Swarm agent is one of the biggest
+
+jumps I've made this week, and I always
+
+want to show you at the end of the week
+
+the biggest jumps. That being said,
+
+don't sleep on any of these because
+
+these are all very interesting as well.
+
+So, you know, you can read the read me
+
+on your own time. That being said, I
+
+want to give you a walk through of how
+
+some of this read me works. So, just
+
+read all the way through and you'll
+
+understand everything.
+
+But the key part here where all the code
+
+is is in the SRC folder. So, in the SRC
+
+folder, if I go to agents, this is where
+
+all the agents I will continue to build
+
+will be placed. The one I wanted to show
+
+you today specifically was the swarm
+
+agent. Since everybody has access to
+
+this code, don't worry about taking
+
+screenshots or anything. I just want to
+
+show you around. You can see the swarm
+
+agent. It will explain everything here
+
+at the top. But then you can see here we
+
+have all of these different models. Most
+
+of them are API models that you call.
+
+But you can see I also implemented O
+
+Lama.
+
+So you can run these
+
+locally as well because a lot of people
+
+are worried about the AI costs etc.
+
+Well, now you have local models. So you
+
+can see all the code here how it works
+
+with the swarm agent and essentially I
+
+can ask them anything and I could
+
+probably pull this up too. Let me see if
+
+I can pull up the code cursor here. Um,
+
+where are my AI agents?
+
+Here we go. Let's go to the swarm agent
+
+so you can see an example of it. I think
+
+it's really really cool to be able to
+
+ask the swarm agent anything
+
+and it will go ahead and
+
+it will go ahead and um ask all of the
+
+different agents.
+
+So you can see if I run it here, it will
+
+allow me to run it independently, but
+
+really I built it so I can import it
+
+into all of my other agents. for
+
+example, a trading agent. Maybe you have
+
+a strategy that works and then you want
+
+to ask, hey, should I actually enter
+
+this position to six different um AIs,
+
+does that work? I don't know, but this
+
+is a new frontier and anything new that
+
+I build, I want to show you immediately.
+
+So, what would you like to ask the AI
+
+swarm? Um, what is the best breakfast
+
+for me to have as an entrepreneur to
+
+have the most energy throughout the day?
+
+Or it could be, hey, here's data for the
+
+last 15 bars. Should I go long or short?
+
+You can see right now I have it marked
+
+off. So, we're not using the O Lama. But
+
+in order to use the local model, you
+
+just unmark that O Lama.
+
+I also added some new models this week
+
+and I'll go over those as well and where
+
+to find them. And if you know the
+
+structure of this, then you'll be able
+
+to build anything really because I have
+
+all the code built. It's really about
+
+understanding the structure. So, you can
+
+see here that it's asking all four of
+
+the models in parallel. So, we're using
+
+parallel processing. That's another huge
+
+thing that I built here this week and I
+
+would like to show you that as well
+
+because the thought of using parallel
+
+processing for AI it just speeds things
+
+up so so much. So, I'll show you that
+
+here in a second, but you can see it got
+
+all responses from the four models here.
+
+And now it's sending it to a consensus
+
+model. And then it says, okay, here's
+
+the AI consensus. But I think it's
+
+important to be able to see the deepseek
+
+response, the open AI response, all of
+
+these other responses independently, and
+
+the consensus response because if you
+
+imagine pulling this this swarm agent
+
+into other programs or agents that
+
+you're building, well, then you'll have
+
+the answers for all of the AIS
+
+independently, but also the consensus.
+
+So all four responses unanimously agree
+
+that best entrepreneurial breakfast
+
+combines high protein, healthy fats,
+
+complex carbohydrates. So you kind of
+
+see how it works, right? Now on to the
+
+topic of um parallel processing. One
+
+thing I did here with the RBI agent is I
+
+set up parallel processing. So if you
+
+remember the RBI agent, remember the
+
+process I follow to automate my training
+
+is research, back test, implement.
+
+Research, back, test, implement. A while
+
+back, we built this RBI agent here that
+
+you can run, and it will go ahead and
+
+take any ideas off the list that we
+
+have, ideas.txt here, and it will go
+
+ahead and back test those. Now, a huge
+
+jump I made this week is this parallel
+
+processing, because now it can back test
+
+five at or multiple at the same time. I
+
+think I set it to five, but you can
+
+change it to however many you want.
+
+Yeah, parallel threads is five here. But
+
+if you go here, um, you can add any
+
+ideas. It's in the data folder. So, let
+
+me close some of these
+
+data RBI PP for pillow processing. I can
+
+put any ideas in here. And let me just
+
+go ahead and kind of cheat a little bit
+
+because it's already done all those. So
+
+let me just put some
+
+so you can see it. So parallel
+
+processing for the research back test
+
+implement agent. It's researching back
+
+testing. Really it's pretty cool because
+
+now it's saying multiple threads. You
+
+can see I'm using Gro for fast
+
+reasoning. This is another huge update I
+
+made this week. Now that I start
+
+speaking through things, I was really
+
+stepping on the gas this week with the
+
+AI agents. We implemented Gro 4 here. We
+
+implemented um queen from Alibaba. I
+
+implemented it through Olama and through
+
+Grock with a Q. But you can see now this
+
+goes ahead and creates a folder and it
+
+starts to first off research the ideas.
+
+So whatever idea I put here, it went
+
+ahead and made a better like written out
+
+idea because the next step here is it's
+
+going to back test the ideas. So this
+
+back test folder should start getting um
+
+filled up with new back tests. But I
+
+think this is very cool because before
+
+it used to do one idea at a time. You
+
+know it would research it, make the
+
+strategy and then it would go ahead and
+
+back test
+
+and then it would try to debug it and
+
+then it would move on to the next one.
+
+But now it does them all at the same
+
+time or at least I have five at five
+
+threads. You can probably do more but
+
+you can see the back test is being
+
+outputed here. Now it'll start debugging
+
+the back test and so on and so on. So
+
+this was a huge huge jump for the RBI
+
+agent and that is available inside of
+
+the GitHub under agents here. Again,
+
+let's go from the fresh page here so you
+
+can really understand this. It's going
+
+to take some time. I know this is the
+
+GitHub that I set up so I understand it,
+
+but I want to keep showing you how to
+
+get there. You go to the main page, read
+
+the read me, and then go to the SRC
+
+agents. Here you can see I just showed
+
+you the swarm agent down here.
+
+This is the one that I showed you prior
+
+that calls all the other agents and then
+
+makes a consess consensus agent. And
+
+then the new parallel processing for the
+
+RBI agent which is so so cool is right
+
+here in the RBI agent PP. Okay. Some
+
+other things that I added this week that
+
+are big movers as I mentioned before the
+
+models here. Before we didn't have XAI,
+
+so we didn't have the Grock models and
+
+now we do. So now you can easily import
+
+any XAI or Grock model into your
+
+workflows which is pretty sick.
+
+It's pretty inexpensive as well. You can
+
+see the pricing here. Okay, but there's
+
+also another model that I added and it
+
+was Queen from Alibaba. So, I don't know
+
+if you've seen that floating around, but
+
+Queen looks like it's a good trader or a
+
+decent trader compared to the others at
+
+least. I wasn't able to figure out the
+
+direct connection to Queen through their
+
+APIs. It's actually really really poorly
+
+set up. But there's two alternatives for
+
+that. I can run them locally with O
+
+Lama. So, you can see I implemented
+
+Queen 8B here with O Lama. So, Olama
+
+allows you to run any model, not any
+
+model, but any open source model
+
+locally. So there, boom, queen. You have
+
+queen access. But also, Grock with a Q
+
+lets you run a bunch of different models
+
+through an API. And you can see I have a
+
+ton here, but now we have Queen 32B
+
+here. So you have 8B and 32B installed
+
+into the GitHub. So we really built a
+
+lot of great things here this week. And
+
+I just wanted to give you this full
+
+overview so every single week you can
+
+see what we're updating. as I'm spending
+
+four to six hours a day um finding the
+
+best thing that can be most impactful
+
+for you at the end of the week and then
+
+I'm trying to show you at the end of the
+
+week. So, same thing. All right, let's
+
+go ahead and just do one last walk
+
+through here. Now that you have the link
+
+to the GitHub, you can go ahead and read
+
+the read me. What I do every time I make
+
+a new agent, I add it to this list here.
+
+So, you'll be able to keep your eye on
+
+this and come back and be like, "Oh,
+
+wow. He made a Polymarket agent." I
+
+didn't show you that here today, but
+
+it's in the same place. Let's go to the
+
+SRC.
+
+SRC here. And if we go to agents here,
+
+you can see again the poly market agent.
+
+This one is looking at all of the recent
+
+all of the recent trades and it's taking
+
+it's getting any of the crypto or sports
+
+stuff out of there. My thesis with
+
+sports stuff is there's a lot of
+
+emotional traders that are essentially
+
+just betting their team. So, I don't
+
+really care about that. And I have so
+
+much exposure to to crypto with
+
+algorithms that I also remove those. You
+
+can change that if you'd like. But
+
+essentially, this agent will go ahead
+
+and it will stock to see what new
+
+um what new trades are being made on
+
+Poly Market.
+
+and then it will kind of give a hint of,
+
+oh, maybe this is a good one to trade.
+
+I didn't implement the just auto buy
+
+yet. I want to keep looking at the data
+
+first for a bit. But again, under SRC,
+
+just like I showed you, you can go down
+
+here to Poly Market. Where is it? Right
+
+here. And then it just runs. It uses the
+
+Poly Market API, which is nice. It's
+
+going ahead and it's looking at the last
+
+ones we have and then asking all of the
+
+other agents in parallel. So you see
+
+here I used the swarm agent. I imported
+
+it into this new agent and then you can
+
+see at the same time it's tracking all
+
+of the new markets that people are
+
+trading with any sort of size on. So you
+
+can see 440 384. I think I have it set
+
+up to be $100 right now. So this stuff
+
+is moving very very quickly. Uh you can
+
+see there's a lot of interest in trading
+
+on poly market. I think it's a very
+
+fascinating market as theoretically
+
+doesn't matter if we're in a bull
+
+market, a bare market, a sideways
+
+market, there should always be some sort
+
+of edge on poly market because it's a
+
+smaller market and there's so many
+
+different opportunities. Like any
+
+question you ask could be a polyarket
+
+market. So I think that's pretty
+
+interesting. But anything I do find that
+
+can be applied to an AI agent, I'll go
+
+ahead and put it here in this open
+
+source GitHub. Um, all the trading bot
+
+stuff still still is closed source. I
+
+don't really plan on making that open
+
+source. Um, as you know, we all need to
+
+kind of make our own strategies and
+
+stuff, but I thought you would really
+
+enjoy a nice overview here. And now you
+
+know absolutely everything you need to
+
+know in order to get started with this
+
+GitHub and AI agents. There's 20 plus in
+
+there. And that swarm that I built, I'm
+
+so so excited about. So maybe I'll put
+
+this as the third full walkthrough
+
+video. But go ahead and watch video
+
+number one and number two if you have
+
+any confusion on this thus far. I can't
+
+wait to see what you build.
+
+

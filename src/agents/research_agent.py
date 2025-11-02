@@ -58,9 +58,9 @@ from src.models import model_factory
 
 # Define paths
 PROJECT_ROOT = Path(__file__).parent.parent.parent  # Points to project root
-DATA_DIR = PROJECT_ROOT / "src" / "data" / "rbi_pp_multi"
+DATA_DIR = PROJECT_ROOT / "src" / "data" / "rbi"
 IDEAS_TXT = DATA_DIR / "ideas.txt"
-IDEAS_CSV = DATA_DIR / "strategy_ideas.csv"-
+IDEAS_CSV = DATA_DIR / "strategy_ideas.csv"
 
 # Model configurations - Updated to use working models
 MODELS = [

@@ -1,0 +1,261 @@
+All right. So, my AI agents for trading
+
+GitHub is now open source. Again, I want
+
+to walk you through it step by step
+
+here. So, you can see how to use it. Go
+
+ahead and just type in Mundev AI agents
+
+to Google or whatever. And I want to
+
+walk you through all of this. You can
+
+see I've already written a nice read me
+
+that explains everything. You can read
+
+it all here. You should be watching this
+
+video here. Uh I will put video updates
+
+and training into this this um playlist
+
+here. You can see the live agents that
+
+we already have. We have a trading
+
+agent. It's an example agent that
+
+analyzes token data via LLM to make the
+
+best decisions. Then we have a strategy
+
+agent which manages and executes trading
+
+strategies placed in the the strategies
+
+folder. Then we have a risk agent
+
+monitors risk. We have a copy agent, a
+
+whale agent monitors whale activities,
+
+sentiment agent, listing arbitrage
+
+agent, a focus agent, a funding agent, a
+
+liquidation agent, a chart agent. All of
+
+these agents, you can read through them
+
+here. They're absolutely sick. This was
+
+the fastest growing GitHub in the world
+
+until I made it private. It is public
+
+now. There's no token ever associated
+
+with this and there never will be. If
+
+you want to learn more, you can see the
+
+ship features. Um, we were working on
+
+this for multiple months here and I'm
+
+still working on in the background, but
+
+I made it private. Now it's public
+
+again. Go ahead and
+
+you can see here the docs here. This is
+
+a nice folder with documentations.
+
+Um, what I want to show you really
+
+though is where to find all the code.
+
+It's in the src. You can see yourv
+
+example here. You'll have to copy this
+
+and make it yourv, but all of the code
+
+is in the src folder here. And you can
+
+go here to agents and this is where all
+
+of the agents live. So you can see we
+
+have the base agent, the back test
+
+runner, the chart analys analysis agent,
+
+the chat agent, the chat uh the clips
+
+agent, the coin gecko agent, the
+
+compliance agent, the copybot agent, the
+
+funding ARB agent, the liquidation
+
+agent. These are all different trading
+
+strategies, the sentiment agent. So, I'm
+
+going to continue to work on this and I
+
+challenge you to to pull it and build
+
+your own stuff that you think will work
+
+for you, you and your agents. I'll
+
+continue to build the infrastructure out
+
+and you can use this code however you'd
+
+like. As you know, this is not financial
+
+advice. Please pause the video here and
+
+see that I am not a financial adviser. I
+
+never will be and never want to be. So,
+
+please read this, pause here. I'm just a
+
+coder coding from my bedroom. Okay? you
+
+can have all of the code for all of
+
+this. Now, so what I want to go ahead
+
+and do now that you know the structure,
+
+again, the structure is the most
+
+important part because yes, you can just
+
+pull this in AI and she can detail it
+
+for you, but the read me, I explain it
+
+all here in the readme what we're
+
+building. I'm just going to continue to
+
+build on top of this. Make sure to hit
+
+the star and the fork if you want the
+
+code. You just hit star here to save it
+
+to your your uh GitHub and then fork if
+
+you want the actual code. Now here in
+
+the src is the main part. So src here we
+
+have agents here and then we have the
+
+models here. So I'm actually going to
+
+update this now today because I've been
+
+fading Grock from Twitter. So you can
+
+see I have Claude, I have Deepseek, I
+
+have Gemini, I have Grock, the other
+
+Grock. Uh, we have Olama, we have Open
+
+AI. Today, we're going to implement
+
+Grock as I see some chatter about Grock
+
+being a good trader. We already have
+
+DeepSeek. Looks like that's the best
+
+trader, but we'll go ahead and update
+
+that model here today. That's again in
+
+the source models folder. Then we have
+
+the source agent. And then the data
+
+folder is where you can save all your
+
+data. And here's some extra scripts.
+
+These are also helpful here. So, just go
+
+ahead and check it out for yourself.
+
+I'll make sure all of this is um below
+
+in the
+
+it's all in the GitHub. It's all in the
+
+GitHub. I just wanted to make sure to
+
+make this short concise video here so
+
+you can understand how to get around the
+
+GitHub and where to um get all the code
+
+and what types of things we're going to
+
+be building. It's going to be mostly for
+
+trading. It says Mundev AI agents,
+
+autonomous AI agents and Python for
+
+trading for the most part. Now, I am a
+
+builder and I build things that I need
+
+for my life. So, you can see there's
+
+actually a little bit more than just
+
+trading in here, but um I'm an
+
+algorithmic trader and that's where most
+
+of my focus is going to be, but I'm also
+
+a builder and I love to ship. So, I will
+
+just keep shipping and updating this
+
+GitHub. All you have to do is hit the
+
+star to save it to your GitHub and then
+
+the fork in order to get the actual
+
+code. So, yeah, that's about it. I just
+
+wanted to give you this short concise
+
+update video here. And now we're going
+
+to dive in and update this code. So
+
+inside of the SRC will have Twitter's
+
+Grock in here. Next.
+
+

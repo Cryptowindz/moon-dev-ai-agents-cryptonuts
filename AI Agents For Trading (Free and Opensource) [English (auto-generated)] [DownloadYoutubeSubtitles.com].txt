@@ -1,0 +1,699 @@
+All right, so I open sourced my AI agent
+
+for trading here and all you have to do
+
+is go to the link to get it. You can
+
+just hit star and fork fork if you want
+
+the code. Anyways, I wanted to go over
+
+this the trading functionalities within
+
+this package. There are a ton of agents,
+
+20 different 20 plus different live
+
+agents, trading agent, strategy agent,
+
+risk agent, copy agent, whale agent,
+
+sentiment agent, listing arb agent,
+
+etc., etc. I'm a quanto. I focus mostly
+
+on algo trading, but of course I will be
+
+building all types of different agents
+
+here. I think this is obviously a new
+
+frontier. I mean, I don't have to tell
+
+you that
+
+we're going to keep building here and
+
+then MCPs are here now and MCPs may lead
+
+into something interesting with chat GPT
+
+the app store. We'll see if that hits.
+
+If not, I think agents are still the
+
+way.
+
+We're going to have AI doing stuff for
+
+us. I think we can all agree on that.
+
+So, trading, why wouldn't they? Let's go
+
+ahead and work on this and go through
+
+here. I want to go to the agent section.
+
+It's kind of a little rundown of the
+
+code. If you're on the read me, go read
+
+through the read me. You can understand
+
+what we've built. Then go to the source.
+
+Everything will be in the source src.
+
+You can play with all the models here.
+
+You know, you have Claude, Deepseek,
+
+Gemini, Grock,
+
+O Lama, if you want to run local models,
+
+OpenAI, of course, XAI, and this will
+
+explain the whole model factory.
+
+Everything is written out, so it's super
+
+easy to run. Go to the SRC here. And I
+
+wanted to go to agents today to talk
+
+about those trading agents.
+
+So, let's go ahead and learn about them
+
+from scratch, dude. Let's learn about
+
+them. Trading agents.md is going to be
+
+where I'm reading from here now. Table
+
+of contents here you can see. Anyways,
+
+Mundav's trading system uses multi-agent
+
+architecture where specialized AI agents
+
+work independently or together to
+
+analyze markets, generate signals,
+
+manage risk, and execute trades. So,
+
+agent categories, core trading, market
+
+intelligence, token discovery. Okay, so
+
+we have multiple agents and you saw
+
+where to get those, right? It's in the
+
+agents folder. We we're in it right now.
+
+Trading strategy and risk, execute
+
+trades and manage portfolio, market
+
+intelligence, sentiment, whale funding,
+
+liquidation chart, provide market
+
+context, and then token discovery like
+
+the sniper, Solana, and copybot.
+
+Sniper and copybot. I wonder what this
+
+does. Buy new opportunities. Of course,
+
+none of this is financial advice. I'm
+
+not financial advisor. Please take this
+
+seriously. Pause this video right now.
+
+read that whole thing or screenshot it
+
+if you're on your phone.
+
+So core trading agents here, these are
+
+the mains agents that make trading
+
+decisions and execute them. So the
+
+trading agent, trading agent py, the LLM
+
+decision maker. So this is pretty basic.
+
+This is where we first got started. Just
+
+a decision maker based off an LLM. So if
+
+we go there, that should be called the
+
+trading agent. The trading agent. Okay,
+
+let's go ahead and put her to the side.
+
+And you can see here we have a prompt.
+
+Your Munda's AI trading assistant
+
+analyze the provided market data and
+
+strategy signals to make a trading
+
+decision. So, I gave it a bunch of
+
+information plus the data
+
+and
+
+you can see everything.
+
+Let's close this for now.
+
+You could see the prompts here. They're
+
+all here. You can go through this code
+
+on your own time.
+
+What it does is pure AI analysis of
+
+market data using claude or whatever. No
+
+hard-coded rules. LLM decides
+
+everything. Manages portfolio allocation
+
+across all tokens. analyzes technical
+
+indicators
+
+and it can incorporate strategy signals
+
+from other agents. How it works? Collect
+
+market data. So it collects market data
+
+and then it has the LLM analyze them.
+
+Handles exits first always to manage
+
+risk. LLM decides portfolio allocation
+
+and then execute entries. So key methods
+
+analyze market data. LM analysis
+
+allocate portfolio LM decides capital
+
+distribution
+
+allocate allocations executes
+
+handles exits configuration here I was
+
+using haiku at the moment
+
+AI model
+
+max position percentage what I want to
+
+do here is I want to say hey
+
+at trading agent
+
+Since we just implemented X AI,
+
+their Grock model the four, I want you
+
+to do the same thing with um this
+
+trading agent.
+
+Also make sure that the uh switchability
+
+with the models is at the top of the
+
+code with parameters. Thank you.
+
+Okay, so that's the trading agent. It's
+
+just like super simple like hey you
+
+decide AI and when I tested it didn't do
+
+too great. So uh there needs to be more
+
+than that. So that led me to the
+
+strategy agent. So, strategy agent, the
+
+rulebased strategist
+
+loads custom strategies from our
+
+strategies custom folder. Each strategy
+
+generates buy, sell, or nothing. AI
+
+validates all signals before execution.
+
+Can work independently or feed signals
+
+to the trading agent. So, I had a
+
+conversation with this guy here. His
+
+name is Ernest Chan. You can go to the
+
+podcast here. It should be live.
+
+And he does something.
+
+>> Please, please, please stop using chat
+
+GPT like Google. Disappear for a month
+
+and do this.
+
+>> He does something.
+
+>> Welcome to corrective AI.
+
+>> Anyways, corrective AI is hey, give the
+
+AI the strategy and then or yeah, give
+
+the AI the signal from the strategy and
+
+it gets to decide if it wants to run it
+
+or not. So opposed to like predicting
+
+price or something like that. Everybody
+
+wants to predict price with AI. That may
+
+not be the way. I can't tell you yes or
+
+no. But
+
+you can test that all yourself.
+
+So here I wanted to figure out.
+
+Let's keep going through here. So it
+
+loads in some custom strategies. So
+
+that's pretty cool because now we can
+
+add custom strategies and then have AI
+
+decide from those strategies. See what
+
+I'm saying? And you see where this is
+
+going. Okay, step one, we just say, "Hey
+
+AI, just tell me what to do. Here's the
+
+data. Let me know long, short, or
+
+nothing." And that's elementary. So
+
+let's go ahead and try a next step.
+
+Okay. Well, here's a strategy. And now
+
+it's triggered. Let me know if I should
+
+take it or not.
+
+It's interesting interesting ideas.
+
+So then we have the risk agent, the
+
+safety guardian. What it does, it's a
+
+circuit breaker. Stops trading when
+
+limits hit. Monitors max loss or gain
+
+over configurable time frame. AI powered
+
+override decisions for edge cases. So
+
+it's like having a risk control plus AI
+
+helping out with it. Minimum balance
+
+protection runs first before running
+
+anything else. So, it's looking at max
+
+loss, max gain, and hey, maybe have an
+
+AI say, "Oh, this is actually this is
+
+running fast.
+
+Let's not take profit." But then again,
+
+that might get you smoked. So,
+
+you can read through all of this here,
+
+but um I wanted to see the first couple.
+
+Dez the whale watcher monitors BTC open
+
+interest changes detects whale activity
+
+large OI moves AI analyzes if the moves
+
+are significant announces. Let's get Dez
+
+going. Let's get Dez back up in here.
+
+Dude,
+
+get Dez back. Okay. And you got we got
+
+XAI here. Perfect. Let's see if it still
+
+runs.
+
+Beautiful. Beautiful. Beautiful. What is
+
+that?
+
+Oh, it's collecting data.
+
+Bird eye API key.
+
+Okay. Okay. This is working, which is
+
+good.
+
+Okay. I'm not going to let it keep
+
+running. It's about to about to buy
+
+something probably.
+
+execute an entry.
+
+Okay, so we just have to tweak that in
+
+order to the EMVs to fix that. And then
+
+let's go ahead and say get add dot get
+
+commit slash um I can do this later
+
+actually.
+
+Updates
+
+get push. Okay.
+
+Let's scroll through here after I get
+
+Dez going, the whale agent. Let's go
+
+ahead and get her going. Where is she?
+
+Well,
+
+do you see it? I don't see it.
+
+Whale agent.
+
+agents.
+
+Where'd she go? She's right there, dude.
+
+Right in your face.
+
+Sheesh.
+
+This is using Deep Seek here. Copy path.
+
+activate
+
+activivate
+
+Tflow and then Python run it.
+
+Okay, it's running.
+
+beautiful. Let's keep going through here
+
+and seeing some other other agents. We
+
+have funding agent. Okay, this one's
+
+just telling me announces via voice when
+
+thresholds hit.
+
+This is interesting actually.
+
+I might run this as well.
+
+Funding agent.
+
+Liquidation agent here. Luna the
+
+liquidation monitor tracks liquidation
+
+volume longs or shorts. Detects sudden
+
+liquidation spikes. AI analy an analyzes
+
+if liquidation signals reversals. So, I
+
+started building these for voice because
+
+if I get them built that way, then it's
+
+super easy to be like, "Okay, we have
+
+all the signals here. Put in a trade on
+
+XYZ exchange." I want to look into that.
+
+Matter of fact,
+
+please look through this entire GitHub
+
+and don't print any sensitive keys or
+
+anything, but I want you to explain the
+
+exchanges we have connected. So, I know
+
+right now this connects
+
+to at least Solana blockchain because I
+
+just saw that in the trading agent, but
+
+um yeah, look through the whole GitHub
+
+and yeah, give me an update on that
+
+chart analysis agent. What it does
+
+generates candlestick charts with
+
+indicators, uses AI vision to analyze
+
+analyze chart patterns, supports
+
+multiple time frames. So you see what
+
+I'm doing here, right? I'm building out
+
+the all the base agents. And then if you
+
+want to try trading with this, you just
+
+combine the chart analysis agent with
+
+the trading agent. Trading agent knows
+
+how to trade, right? So same with the
+
+liquidations. Oh, you want to try some
+
+liquidations? Okay, the liquidation
+
+agent has all the data. It's just giving
+
+it to me in voice right now. And then it
+
+can easily be tested.
+
+Chart analysis agent. Okay, cool, cool,
+
+cool. Token discovery agents. These are
+
+interesting. These were back in when
+
+Solana was really going crazy.
+
+Watches for new Solana tokens in real
+
+time.
+
+Solana agent. The Solana token analyzer
+
+analyzes recent token launches using
+
+mundage criteria.
+
+MCAP
+
+minimum liquidity.
+
+So criteria is market cap. Okay.
+
+Liquidity
+
+token age.
+
+Copy by agent analyzes current copy
+
+portfolio positions.
+
+Okay, this was cool actually.
+
+Damn, there's so many ideas. There's so
+
+many paths.
+
+How agents work together. So the main
+
+loop integration here,
+
+here's how you can orchestrate all
+
+agents together.
+
+So you can bring in the risk agent, the
+
+strategy agent, the trading agent, the
+
+sentiment agent, the whale agents,
+
+funding agent, liquidation agent. That's
+
+a ton of different ideas
+
+that could work together however you see
+
+fit.
+
+Initialize all agents here. Track
+
+signals from intelligence agents.
+
+So always check risk first. So got the
+
+risk agent. Okay. Collect market
+
+intelligence.
+
+Strategy signals. Trading agent.
+
+Information flow. Quick start guide.
+
+Configure your system.
+
+Tokens to trade. Position size. I may
+
+have just made this for Solana, dude.
+
+We'll see. Bird eye. Mundave.
+
+run individual agents
+
+trading agent strategy. Yeah, I think I
+
+probably did because
+
+yeah, that makes sense cuz I was going
+
+to do this all on chain.
+
+I don't know. We'll see. We'll see. I
+
+just asked that question. Per agent
+
+overrides best practices.
+
+Risk plus trading agent rule-based
+
+hybrid.
+
+Always run risk first. Cost optimization
+
+monitoring. No trades executing. Okay.
+
+Yada yada. This is a lot of a lot of
+
+slop you added on to this dude. A lot of
+
+slop.
+
+Okay. Sick dude. Remember trading
+
+involves risk.
+
+Please read the
+
+this right here because that's super
+
+duper important. So, I feel like that's
+
+a pretty good overview of how the
+
+trading agents work.
+
+You just go to source here and you have
+
+access to all of these agents here right
+
+off the bat. I've got a lot I want to
+
+update to this and I'm going to continue
+
+to do that and I'll continue to make
+
+videos as well just to show you step by
+
+step along the way. So, you know, if
+
+you're
+
+interested in this GitHub here,
+
+then make sure to, you know, subscribe
+
+or follow or like or whatever you need
+
+to do so you see the next one. But I
+
+think that's about it for here.
+
+
